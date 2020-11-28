@@ -10,13 +10,13 @@ function CCore:initialize( )
 	self.m_pShaders		= {}; -- [ int->textureIndex ];
 	self.m_pUses		= {}; -- [ int->textureIndex ];
 	
-	-- if ( _DEBUG ) then
+	if ( _DEBUG ) then
 		addEventHandler("onClientRender", root, function ( )
 			dxDrawText( "self.m_pTextures: " .. inspect(self.m_pTextures), 300, 200, 0, 0 );
 			dxDrawText( "self.m_pShaders: " .. inspect(self.m_pShaders), 700, 200, 0, 0 );
 			dxDrawText( "self.m_pUses: " .. inspect(self.m_pUses), 1000, 200, 0, 0 );
 		end );
-	-- end
+	end
 	
 	local aObjects = getElementsByType("object", root, true);
 	for i, pObject in ipairs ( aObjects ) do
